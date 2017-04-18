@@ -15,6 +15,7 @@
   <tbody>
     <% @curriculums.each do |curriculum| %>
       <tr>
+        <td><%= image_tag curriculum.image.url(:thumb) %></td>
         <td><%= curriculum.title %></td>
         <td><%= curriculum.content %></td>
         <td><%= curriculum.user.email %></td>

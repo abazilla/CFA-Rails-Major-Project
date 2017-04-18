@@ -17,6 +17,8 @@ gem 'materialize-sass'
 gem 'omniauth-facebook'
 gem "pundit"
 gem "pry"
+gem "paperclip", "~> 5.0.0"
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
