@@ -15,6 +15,8 @@ gem 'puma', '~> 3.0'
 gem 'devise'
 gem 'materialize-sass'
 gem 'omniauth-facebook'
+gem "pundit"
+gem "pry"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

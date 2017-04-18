@@ -41,6 +41,7 @@ class CurriculumsController < ApplicationController
   # PATCH/PUT /curriculums/1
   # PATCH/PUT /curriculums/1.json
   def update
+    authorize @curriculum
     respond_to do |format|
       if @curriculum.update(curriculum_params)
         format.html { redirect_to @curriculum, notice: 'Curriculum was successfully updated.' }
