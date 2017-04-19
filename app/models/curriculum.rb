@@ -8,4 +8,7 @@ class Curriculum < ApplicationRecord
 
   ratyrate_rateable "rating"
 
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
 end
