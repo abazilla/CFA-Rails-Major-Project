@@ -20,6 +20,7 @@ gem "pry"
 gem "paperclip", "~> 5.0.0"
 gem 'carrierwave', '~> 1.0'
 gem 'ransack'
+gem 'ratyrate'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
