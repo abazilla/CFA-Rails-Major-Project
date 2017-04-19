@@ -1,0 +1,26 @@
+  <% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+  <% elsif flash[:warning] %>
+  <div class="alert alert-danger"><%= flash[:warning] %></div>
+  <% else %>
+  <% end %>
+
+<h1>Contact Us</h1>
+
+<%= form_for :contact do |f| %>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :message %>
+    <%= f.text_area :message %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
