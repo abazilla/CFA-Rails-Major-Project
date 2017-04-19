@@ -21,7 +21,8 @@ gem "paperclip", "~> 5.0.0"
 gem 'carrierwave', '~> 1.0'
 gem 'ransack'
 gem 'ratyrate'
-gem 'friendly_id', '~> 5.1.0' 
+gem 'friendly_id', '~> 5.1.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

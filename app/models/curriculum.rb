@@ -1,4 +1,5 @@
 class Curriculum < ApplicationRecord
+
   belongs_to :user
 
   mount_uploaders :files, FileUploader

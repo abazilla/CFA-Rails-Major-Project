@@ -1,5 +1,7 @@
 class CurriculumsController < ApplicationController
   before_action :set_curriculum, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+
 
   # GET /curriculums
   # GET /curriculums.json
