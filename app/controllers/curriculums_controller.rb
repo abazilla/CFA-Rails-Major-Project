@@ -13,6 +13,9 @@ class CurriculumsController < ApplicationController
   # GET /curriculums/1
   # GET /curriculums/1.json
   def show
+    @curriculum = Curriculum.friendly.find(params[:id])
+    @comment = Comment.new
+    @comments = @curriculum.comments
   end
 
   # GET /curriculums/new
@@ -28,7 +31,7 @@ class CurriculumsController < ApplicationController
   # POST /curriculums.json
   def create
     @curriculum = Curriculum.new(curriculum_params)
-    @curriculum.user = current_user
+    @curriculum.user_id = current_user.id
 
     respond_to do |format|
       if @curriculum.save

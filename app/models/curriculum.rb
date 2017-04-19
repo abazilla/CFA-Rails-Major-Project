@@ -1,6 +1,7 @@
 class Curriculum < ApplicationRecord
 
   belongs_to :user
+  has_many :comments
 
   mount_uploaders :files, FileUploader
 

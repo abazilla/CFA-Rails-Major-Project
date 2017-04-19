@@ -35,3 +35,16 @@
   <%= link_to 'Edit', edit_curriculum_path(@curriculum) %> |
   <%= link_to 'Back', curriculums_path %>
 </p>
+
+<p>
+  <%= render 'comments/form', comment: @comment %>
+</p>
+
+<p>
+  <% @comments.reverse.each do |comment| %>
+    <%= link_to comment.user.email, '' %><%= comment.created_at %>
+    <br>
+    <%= comment.content %>
+    <br>
+  <% end %>
+</p>
