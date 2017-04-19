@@ -17,5 +17,11 @@
   <%= @curriculum.user.email %>
 </p>
 
-<%= link_to 'Edit', edit_curriculum_path(@curriculum) %> |
-<%= link_to 'Back', curriculums_path %>
+<!-- <p>
+  <%= @curriculum.document_file_name %>
+  <a href="<#%= asset_path @curriculum.document.url %>" download>Download</a>
+</p> -->
+<p>
+  <%= link_to 'Edit', edit_curriculum_path(@curriculum) %> |
+  <%= link_to 'Back', curriculums_path %>
+</p>
