@@ -17,10 +17,16 @@
   <%= @curriculum.user.email %>
 </p>
 
-<!-- <p>
-  <%= @curriculum.document_file_name %>
-  <a href="<#%= asset_path @curriculum.document.url %>" download>Download</a>
-</p> -->
+<p>
+  <p>Number of attachments: <%=@curriculum.files.count%></p>
+
+  <% @curriculum.files.each do |file| %>
+    <p>
+      <%= file.file.identifier %><br>
+      <a href="<%= asset_path file.url %>" download>Download</a>
+    </p>
+  <% end %>
+</p>
 <p>
   <%= link_to 'Edit', edit_curriculum_path(@curriculum) %> |
   <%= link_to 'Back', curriculums_path %>

@@ -26,10 +26,10 @@
     <%= f.text_area :content %>
   </div>
 
-  <!-- <div class="field">
-    <%= f.label :document %>
-    <%= f.file_field :document, multiple: true, name: 'file[]' %>
-  </div> -->
+  <div class="field">
+    <%= f.label :files %>
+    <%= f.file_field :files, multiple: true%>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
