@@ -19,6 +19,7 @@
         <td><%= curriculum.title %></td>
         <td><%= curriculum.content %></td>
         <td><%= curriculum.user.email %></td>
+        <td><%= curriculum.document_file_name %></td>
         <td><%= link_to 'Show', curriculum %></td>
         <td><%= link_to 'Edit', edit_curriculum_path(curriculum) %></td>
         <td><%= link_to 'Destroy', curriculum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
