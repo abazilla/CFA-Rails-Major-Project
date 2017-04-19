@@ -4,7 +4,8 @@ class CurriculumsController < ApplicationController
   # GET /curriculums
   # GET /curriculums.json
   def index
-    @curriculums = Curriculum.all
+    @q = Curriculum.ransack(params[:q])
+    @curriculums = @q.result
   end
 
   # GET /curriculums/1
