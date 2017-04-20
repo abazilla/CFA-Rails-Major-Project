@@ -7,8 +7,19 @@ class CurriculumPolicy < ApplicationPolicy
   end
 
   def update?
-    false
-    @record.user == @user
+    if @user.has_role?(:admin) || @record.user == @user
+      true
+    else
+      false
+    end
+  end
+
+  def destroy?
+    if @user.has_role?(:admin) || @record.user == @user
+      true
+    else
+      false
+    end
   end
 
   class Scope < Scope

@@ -1,33 +1,39 @@
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><%= link_to 'Curriculum', curriculums_path %></li>
-        <li><%= link_to 'Contact', contact_path %></li>
-        <li><%= link_to 'Profile', edit_user_registration_path %></li>
-        <% if user_signed_in? %>
-          <li>
-          <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-          </li>
-        <% else %>
-          <li>
-          <%= link_to('Login', new_user_session_path)  %>
-          </li>
-        <% end %>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><%= link_to 'Curriculum', curriculums_path %></li>
-        <li><%= link_to 'Contact', contact_path %></li>
-        <% if user_signed_in? %>
-          <li>
-          <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-          </li>
-        <% else %>
-          <li>
-          <%= link_to('Login', new_user_session_path)  %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </nav>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">Logo</a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+
+      <% if user_signed_in? %>
+      <% if current_user.has_role?(:admin) %>
+      <li><%= link_to 'Admin Dashboard', pages_admindashboard_path %></li>
+      <% end %>
+      <% end %>
+      <li><%= link_to 'Curriculum', curriculums_path %></li>
+      <li><%= link_to 'Contact', contact_path %></li>
+      <li><%= link_to 'Profile', edit_user_registration_path %></li>
+      <% if user_signed_in? %>
+      <li>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+      </li>
+      <% else %>
+      <li>
+        <%= link_to('Login', new_user_session_path)  %>
+      </li>
+      <% end %>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><%= link_to 'Curriculum', curriculums_path %></li>
+      <li><%= link_to 'Contact', contact_path %></li>
+      <% if user_signed_in? %>
+      <li>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+      </li>
+      <% else %>
+      <li>
+        <%= link_to('Login', new_user_session_path)  %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
