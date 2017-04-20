@@ -62,6 +62,7 @@ class CurriculumsController < ApplicationController
   # DELETE /curriculums/1
   # DELETE /curriculums/1.json
   def destroy
+    authorize @curriculum
     @curriculum.destroy
     respond_to do |format|
       format.html { redirect_to curriculums_url, notice: 'Curriculum was successfully destroyed.' }

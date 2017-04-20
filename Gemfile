@@ -22,6 +22,8 @@ gem 'carrierwave', '~> 1.0'
 gem 'ransack'
 gem 'ratyrate'
 gem 'friendly_id', '~> 5.1.0'
+gem "rolify"
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
