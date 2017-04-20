@@ -13,7 +13,7 @@ gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 gem 'devise'
-gem 'materialize-sass'
+gem "bulma-rails", "~> 0.4.0"
 gem 'omniauth-facebook'
 gem "pundit"
 gem "pry"
