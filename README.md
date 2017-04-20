@@ -1,24 +1,14 @@
-# README
+![Imgur](http://i.imgur.com/tKmPwDF.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# About
+Open Education is a platform for NSW Schools and Teachers to be able to share their curriculum, lesson planning, and resources amongst each other.
 
-Things you may want to cover:
+This is a project created by myself as part of the Coder Factory Academy bootcamp. The goal was to fully ideate, design, plan, build, test and deploy a rails application from start to finish, using the skills learned in previous weeks.
 
-* Ruby version
+# Installation
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+# Usage
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Design
