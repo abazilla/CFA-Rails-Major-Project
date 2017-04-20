@@ -1,4 +1,6 @@
-<%= form_for curriculum, html: { multipart: true } do |f| %>
+
+
+  <%= form_for curriculum, html: { multipart: true } do |f| %>
   <% if curriculum.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(curriculum.errors.count, "error") %> prohibited this curriculum from being saved:</h2>
@@ -21,6 +23,16 @@
     <%= f.text_field :title %>
   </div>
 
+<div class="field">
+  <%= f.label :grade %>
+  <%= f.select :grade, ['Grade 7', 'Grade 8', 'Grade 9', 'Grade 10'] %>
+</div>
+
+<div class="field">
+  <%= f.label :subject %>
+  <%= f.select :subject, ['Math', 'English', 'Technology'] %>
+</div>
+
   <div class="field">
     <%= f.label :content %>
     <%= f.text_area :content %>
@@ -34,4 +46,12 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('select').material_select();
+  });
+
+</script>
