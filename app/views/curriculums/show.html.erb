@@ -15,6 +15,12 @@
   <%= @curriculum.subject %>
 </p>
 
+<% if @curriculum.subject == 'Agriculture & Food Technology' %>
+  <%= render 'partials/AFT' %>
+<% elsif @curriculum.subject == 'Digital Technology' %>
+  <%= render 'partials/TM' %>
+<% end %>
+
 <p>
   <strong>Content:</strong>
   <%= @curriculum.content %>
@@ -33,10 +39,10 @@
   <p>Number of attachments: <%=@curriculum.files.count%></p>
 
   <% @curriculum.files.each do |file| %>
-    <p>
-      <%= file.file.identifier %><br>
-      <a href="<%= asset_path file.url %>" download>Download</a>
-    </p>
+  <p>
+    <%= file.file.identifier %><br>
+    <a href="<%= asset_path file.url %>" download>Download</a>
+  </p>
   <% end %>
 </p>
 <p>
@@ -50,9 +56,9 @@
 
 <p>
   <% @comments.reverse.each do |comment| %>
-    <%= link_to comment.user.email, '' %><%= comment.created_at %>
-    <br>
-    <%= comment.content %>
-    <br>
+  <%= link_to comment.user.email, '' %><%= comment.created_at %>
+  <br>
+  <%= comment.content %>
+  <br>
   <% end %>
 </p>
