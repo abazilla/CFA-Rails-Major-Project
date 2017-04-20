@@ -1,4 +1,4 @@
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 <%= devise_error_messages! %>
 
 <section class="hero is-fullheight is-dark is-bold">
@@ -21,14 +21,18 @@
             <%= f.password_field :password, autocomplete: "off", class: "input" %>
           </div>
 
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-            <% end %>
+            <% if devise_mapping.rememberable? -%>
+            <div class="label">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+            <% end -%>
 
             <div class="control">
               <%= f.submit "Log in", class: "button is-primary" %>
             </div>
           </div>
+
           <p class="has-text-centered">
             <%= render "devise/shared/links" %>
 
