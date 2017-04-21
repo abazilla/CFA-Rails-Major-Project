@@ -15,11 +15,11 @@
   <%= @curriculum.subject %>
 </p>
 <figure class="highlight" style="box-shadow: none;"><pre><code class="language-html" data-lang="html">
-<% if @curriculum.subject == 'Agriculture & Food Technology' %>
+  <% if @curriculum.subject == 'Agriculture & Food Technology' %>
   <%= render 'partials/AFT' %>
-<% elsif @curriculum.subject == 'Digital Technology' %>
+  <% elsif @curriculum.subject == 'Digital Technology' %>
   <%= render 'partials/TM' %>
-<% end %>
+  <% end %>
 </code></pre><button class="copy">Copy</button><button class="expand">Expand</button></figure>
 
 <p>
@@ -57,9 +57,9 @@
 
 <p>
   <% @comments.reverse.each do |comment| %>
-  <%= link_to comment.user.email, '' %><%= comment.created_at %>
-  <br>
-  <%= comment.content %>
-  <br>
+    <%= link_to comment.user.email, '' %><%= comment.created_at %>
+    <br>
+    <%= comment.content %>
+    <br>
   <% end %>
 </p>

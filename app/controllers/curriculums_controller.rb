@@ -14,7 +14,7 @@ class CurriculumsController < ApplicationController
   # GET /curriculums/1.json
   def show
     @curriculum = Curriculum.friendly.find(params[:id])
-    @comment = Comment.new
+    @comment = Comment.new()
     @comments = @curriculum.comments
   end
 
