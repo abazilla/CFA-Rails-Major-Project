@@ -3,6 +3,8 @@ class Curriculum < ApplicationRecord
   belongs_to :user
   has_many :comments
 
+  validates :title, :content, :grade, :subject, presence: true
+
   mount_uploaders :files, FileUploader
 
   resourcify
@@ -14,5 +16,7 @@ class Curriculum < ApplicationRecord
 
   extend FriendlyId
   friendly_id :title, use: :slugged
+
+
 
 end
