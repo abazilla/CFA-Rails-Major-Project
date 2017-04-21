@@ -15,4 +15,7 @@ FactoryGirl.define do
     f.content { Faker::Hacker.say_something_smart }
   end
 
+  factory :comment do |f|
+    f.content { Faker::Hacker.say_something_smart }
+  end
 end
