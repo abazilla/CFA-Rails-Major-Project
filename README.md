@@ -7,8 +7,12 @@ This is a project created by myself as part of the Coder Factory Academy bootcam
 
 # Installation
 
-
+Please visit this site:
 
 # Usage
+
+1. Create an account
+2. Go to the Curriculum page
+3.
 
 # Design
