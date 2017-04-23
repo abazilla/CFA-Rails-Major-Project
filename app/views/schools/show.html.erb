@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag @school.image.url(:medium) %>
+
+
 <p>
   <strong>Name:</strong>
   <%= @school.name %>
@@ -11,18 +14,13 @@
 </p>
 
 <p>
-  <strong>Grade low:</strong>
-  <%= @school.grade_low %>
-</p>
-
-<p>
-  <strong>Grade high:</strong>
-  <%= @school.grade_high %>
+  <strong>Grades taught:</strong>
+  <%= @school.grade_low %>-<%= @school.grade_high %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @school.user %>
+  <%= @school.user.email %>
 </p>
 
 <p>

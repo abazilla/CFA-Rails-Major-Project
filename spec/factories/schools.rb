@@ -1,11 +1,13 @@
+require 'faker'
+
 FactoryGirl.define do
-  factory :school do
-    name "MyString"
-    location "MyString"
-    grade_low "MyString"
-    grade_high "MyString"
-    user nil
-    curriculum_list "MyString"
-    teacher_list "MyString"
+  factory :school do |f|
+    f.name { Faker::LordOfTheRings.name }
+    f.location { Faker::LordOfTheRings.location }
+    f.grade_low "K"
+    f.grade_high "12"
+    # f.user "user@user.com"
+    f.curriculum_list []
+    f.teacher_list ["user@user.com"]
   end
 end

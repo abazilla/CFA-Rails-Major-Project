@@ -4,8 +4,8 @@ class SchoolsController < ApplicationController
   # GET /schools
   # GET /schools.json
   def index
-    @schools = School.all
-  end
+    @q = School.ransack(params[:q])
+    @schools = @q.result(distinct: true)  end
 
   # GET /schools/1
   # GET /schools/1.json
@@ -88,6 +88,6 @@ class SchoolsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def school_params
-      params.require(:school).permit(:name, :location, :grade_low, :grade_high, :user_id, :curriculum_list, :teacher_list)
+      params.require(:school).permit(:name, :location, :grade_low, :grade_high, :user_id, :curriculum_list, :teacher_list, :image)
     end
 end

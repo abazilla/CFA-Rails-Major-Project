@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
@@ -22,13 +27,9 @@
   </div>
 
   <div class="field">
-    <%= f.label :grade_low %>
-    <%= f.text_field :grade_low %>
-  </div>
-
-  <div class="field">
-    <%= f.label :grade_high %>
-    <%= f.text_field :grade_high %>
+    <%= f.label "Grades taught:" %>
+    <br>
+    From <%= f.select :grade_low, ['K', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'] %> to <%= f.select :grade_high, ['K', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'] %>
   </div>
 
   <div class="actions">
