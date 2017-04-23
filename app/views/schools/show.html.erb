@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @school.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @school.location %>
+</p>
+
+<p>
+  <strong>Grade low:</strong>
+  <%= @school.grade_low %>
+</p>
+
+<p>
+  <strong>Grade high:</strong>
+  <%= @school.grade_high %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @school.user %>
+</p>
+
+<p>
+  <strong>Curriculum list:</strong>
+  <%= @school.curriculum_list %>
+</p>
+
+<p>
+  <strong>Teacher list:</strong>
+  <%= @school.teacher_list %>
+</p>
+
+<%= link_to 'Add yourself to list', add_teacher_school_path(@school) %> |
+<%= link_to 'Edit', edit_school_path(@school) %> |
+<%= link_to 'Back', schools_path %>
