@@ -10,6 +10,8 @@
       <span></span>
       <span></span>
       <span></span>
+      <span></span>
+      <span></span>
     </span>
     <div class="nav-right nav-menu">
         <% if user_signed_in? %>
@@ -17,7 +19,7 @@
         <%= link_to 'Admin Dashboard', pages_admindashboard_path, class: "nav-item is-tab is-hidden-mobile" %>
         <% end %>
         <% end %>
-        <%= link_to 'Messages', edit_user_registration_path, class: "nav-item is-tab is-hidden-mobile" %></a>
+        <%= link_to 'Inbox', conversations_path, class: "nav-item is-tab is-hidden-mobile" %></a>
       <%= link_to 'Profile', edit_user_registration_path, class: "nav-item is-tab is-hidden-mobile" %></a>
       <% if user_signed_in? %>
       <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: "nav-item is-tab") %>
