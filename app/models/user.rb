@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   rolify
+  ratyrate_rater
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -12,23 +13,11 @@ class User < ApplicationRecord
   has_many :school_teachers
   has_many :schools, through: :school_teachers
 
-  def name
-    [first_name, last_name].join " "
-  end
-
-  rolify :before_add => :before_add_method
-
-  def before_add_method(role)
-    # do something before it gets added
-  end
-
   after_create :assign_default_role
 
   def assign_default_role
     self.add_role(:newuser) if self.roles.blank?
   end
-
-  ratyrate_rater
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -42,6 +31,10 @@ class User < ApplicationRecord
     end
   end
 
+  def name
+    [first_name, last_name].join " "
+  end
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
@@ -49,5 +42,4 @@ class User < ApplicationRecord
       end
     end
   end
-
 end
