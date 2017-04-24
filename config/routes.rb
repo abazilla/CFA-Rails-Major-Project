@@ -4,10 +4,11 @@ Rails.application.routes.draw do
 
   resources :schools do
     member do
-      put 'add_teacher'
+      # put 'add_teacher'
     end
   end
 
+  # get 'schools#add_teacher'
 
   get 'pages/admindashboard'
 

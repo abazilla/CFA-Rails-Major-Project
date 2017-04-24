@@ -1,6 +1,9 @@
 class School < ApplicationRecord
   belongs_to :user
 
+  has_many :school_teachers
+  has_many :users, through: :school_teachers
+
   validates :name, :location, presence: true
 
   extend FriendlyId

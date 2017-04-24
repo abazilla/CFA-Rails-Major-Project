@@ -14,7 +14,7 @@ class SchoolsController < ApplicationController
 
   # PUTS /schools/1/add_teacher
   def add_teacher
-    @school.teacher_list.push(current_user.email.to_s)
+    self.school_teachers.create(:user => current_user)
 
     redirect_to @school
 
