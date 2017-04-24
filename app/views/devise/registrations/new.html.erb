@@ -1,13 +1,5 @@
-<h2>Sign up</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
-
-
-
-
-<%= render "devise/shared/links" %>
 
 <section class="hero is-fullheight is-dark is-bold">
     <div class="hero-body">
@@ -26,12 +18,12 @@
 
               <div class="label">
                 <%= f.label :First_name %><br />
-                <%= f.text_field :first_name, autofocus: true, class: "input" %>
+                <%= f.text_field :first_name, class: "input" %>
               </div>
 
               <div class="label">
                 <%= f.label :Last_name %><br />
-                <%= f.text_field :last_name, autofocus: true, class: "input" %>
+                <%= f.text_field :last_name, class: "input" %>
               </div>
               <hr>
 
@@ -51,7 +43,7 @@
               <hr>
 
               <div class="control">
-                <%= f.submit "Sign up", class: "button is-primary" %>
+                <%= f.submit "Sign up", class: "button is-info" %>
               </div>
             </div>
             <p class="has-text-centered">

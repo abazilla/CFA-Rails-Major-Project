@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @school.image.url(:medium) %>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @school.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @school.location %>
+</p>
+
+<p>
+  <strong>Grades taught:</strong>
+  <%= @school.grade_low %>-<%= @school.grade_high %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @school.user.email %>
+</p>
+
+<p>
+  <strong>Teacher list:</strong>
+  <% @school.teachers.each do |teacher|%>
+  <%= teacher.email %>,
+  <% end %>
+</p>
+
+
+<%= form_for(@school, :url => update_teacher_school_path(@school), :method => 'post') do |f| %>
+  <div class="label">
+    <%= check_box 'object', 'included', {:checked => @school.teachers.include?(current_user)}, '1', '0' %>
+    <%= f.submit "Update status" %>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_school_path(@school) %> |
+<%= link_to 'Back', schools_path %>

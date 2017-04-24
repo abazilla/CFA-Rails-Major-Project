@@ -14,8 +14,31 @@
  *= require_self
  */
 
- @import "bulma";
+@import "bulma";
+
+$primary: $blue !default;
+$link: $primary;
+
+a {
+  color: $blue;
+}
+
+.nav-item a.is-tab:hover, a.nav-item.is-tab:hover {
+  border-bottom-color: $blue;
+}
+
+.input:focus, .input.is-focused, .input:active, .input.is-active, .textarea:focus, .textarea.is-focused, .textarea:active, .textarea.is-active {
+  border-color: $blue;
+}
+
+.button.is-primary {
+  background-color: $blue;
+}
 
 .contact {
   height: 320px;
+}
+
+.hero.is-dark a {
+  color: $white;
 }

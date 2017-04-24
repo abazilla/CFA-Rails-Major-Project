@@ -2,6 +2,14 @@ Rails.application.routes.draw do
 
 
 
+  resources :schools do
+    member do
+      post 'update_teacher'
+    end
+  end
+
+  # get 'schools#add_teacher'
+
   get 'pages/admindashboard'
 
   get 'contact', to: "contact#index"

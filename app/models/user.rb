@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_many :curriculums
   has_many :comments
 
+  has_many :school_teachers
+  has_many :schools, through: :school_teachers
+
   def name
     [first_name, last_name].join " "
   end
