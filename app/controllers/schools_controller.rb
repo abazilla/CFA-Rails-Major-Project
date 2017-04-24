@@ -1,5 +1,5 @@
 class SchoolsController < ApplicationController
-  before_action :set_school, only: [:show, :edit, :update, :destroy, :add_teacher]
+  before_action :set_school, only: [:show, :edit, :update, :destroy, :update_teacher]
 
   # GET /schools
   # GET /schools.json
@@ -13,8 +13,20 @@ class SchoolsController < ApplicationController
   end
 
   # PUTS /schools/1/add_teacher
-  def add_teacher
-    self.school_teachers.create(:user => current_user)
+  def update_teacher
+    if @school.teachers.include?(current_user)
+      if params["object"]["included"].to_i == 0
+        @school.teachers.delete(current_user)
+      else
+        #TODO error cause user is already added
+      end
+    else
+      if params["object"]["included"].to_i == 1
+        @school.teachers.push(current_user)
+      else
+        #TODO error cause user isn't in the list
+      end
+    end
 
     redirect_to @school
 

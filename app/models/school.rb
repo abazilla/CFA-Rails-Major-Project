@@ -1,8 +1,8 @@
 class School < ApplicationRecord
   belongs_to :user
 
-  has_many :school_teachers
-  has_many :users, through: :school_teachers
+  has_many :school_teachers#, foreign_key: "school_id", class_name: "School"
+  has_many :teachers, through: :school_teachers, foreign_key: 'user_id', source: 'user'
 
   validates :name, :location, presence: true
 

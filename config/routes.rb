@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :schools do
     member do
-      # put 'add_teacher'
+      post 'update_teacher'
     end
   end
 

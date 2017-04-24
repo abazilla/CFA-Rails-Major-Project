@@ -30,9 +30,18 @@
 
 <p>
   <strong>Teacher list:</strong>
-  <%= @school.teacher_list %>
+  <% @school.teachers.each do |teacher|%>
+  <%= teacher.email %>, 
+  <% end %>
 </p>
 
-<%= link_to 'Add yourself to list', add_teacher_school_path(@school) %> |
+
+<%= form_for(@school, :url => update_teacher_school_path(@school), :method => 'post') do |f| %>
+  <div class="label">
+    <%= check_box 'object', 'included', {:checked => @school.teachers.include?(current_user)}, '1', '0' %>
+    <%= f.submit "Update status" %>
+  </div>
+<% end %>
+
 <%= link_to 'Edit', edit_school_path(@school) %> |
 <%= link_to 'Back', schools_path %>
