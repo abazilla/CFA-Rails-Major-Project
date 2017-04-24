@@ -24,14 +24,9 @@
 </p>
 
 <p>
-  <strong>Curriculum list:</strong>
-  <%= @school.curriculum_list %>
-</p>
-
-<p>
   <strong>Teacher list:</strong>
   <% @school.teachers.each do |teacher|%>
-  <%= teacher.email %>, 
+  <%= teacher.email %>,
   <% end %>
 </p>
 
