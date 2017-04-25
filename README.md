@@ -10,11 +10,11 @@ This is a project created by myself as part of the Coder Factory Academy bootcam
 
 # Installation
 
-Please visit this site for the live version:
+Please visit this site for the live version: https://openeducation2.herokuapp.com/
 
 If you would otherwise like to have it installed locally, do the following:
 
-Clone the project:
+Clone the project
 
 git clone https://github.com/nickwu78/CFA-Fund-It-Forward.git
 
@@ -26,9 +26,7 @@ Run the app:
 
 rails s
 
-and access it through your browser:
-
-http://localhost:3000
+and access it through your browser: http://localhost:3000
 
 # Usage
 
@@ -75,6 +73,11 @@ As you can see, the design is simpler and not decked out with too many features.
 Below is the Entity Relationship Diagram created in the planning stage. As you can see, the forums post were omitted as it was not an MVP feature necessary for the project at the moment.
 
 ![Imgur](http://i.imgur.com/hi6pKCA.png)
+
+The User Journeys can also be found here, with all the other User story/planning related content being found on my trello page:  https://trello.com/invite/b/cG2XYoKo/2445b78bdc49cb27c4fdfbd493731292/major-project-2
+
+
+![Imgur](http://i.imgur.com/BeVJGIv.png)
 
 
 ## Code Review
