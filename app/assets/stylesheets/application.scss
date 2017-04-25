@@ -42,3 +42,18 @@ a {
 .hero.is-dark a {
   color: $white;
 }
+
+.fa-mortar-board:before, .fa-graduation-cap:before, .fa-retweet:before {
+  font-size: 128px;
+}
+
+.hero-image.hero.is-info.is-bold {
+  background: linear-gradient(
+  rgba(0, 0, 0, 0.45),
+  rgba(0, 0, 0, 0.45)
+), url(http://i.imgur.com/u9UBlD7.jpg);
+  back-ground-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
