@@ -25,6 +25,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem "rolify"
 gem 'paperclip-cloudinary'
 gem 'fog'
+gem "figaro"
 
 
 

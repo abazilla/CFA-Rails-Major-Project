@@ -19,3 +19,6 @@
 #Ignore pictures
 /public/system
 /public/uploads
+
+# Ignore application configuration
+/config/application.yml
