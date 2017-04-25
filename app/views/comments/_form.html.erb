@@ -12,11 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, class: "textarea is-info" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions is-pulled-right">
+    <%= f.submit "Add Comment", class: "button is-info" %>
   </div>
+  <br>
+  <br>
 <% end %>

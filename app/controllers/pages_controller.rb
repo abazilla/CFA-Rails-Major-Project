@@ -16,6 +16,7 @@ class PagesController < ApplicationController
 
     @users = User.all
     @curriculums = Curriculum.all
+    @schools = School.all
     @comments = Comment.all
   end
 end

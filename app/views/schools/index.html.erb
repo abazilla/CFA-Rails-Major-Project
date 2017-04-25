@@ -37,8 +37,9 @@
             <div class="media-left">
             </div>
             <div class="media-content">
-              <p class="title is-4 has-text-left"><%= school.name %></p>
-              <p class="subtitle is-6"><%= school.location %><br />Creator: <%= link_to school.user.email, '' %></p>
+              <p class="title is-4 has-text-left"><%= link_to school.name, school%></p>
+              <p class="subtitle is-6"><i class="fa fa-map-marker" aria-hidden="true"></i>
+<%= school.location %><br />Creator: <%= link_to school.user.email, '' %></p>
             </div>
           </div>
 
@@ -50,9 +51,8 @@
             <br>
           </div>
           <div class="content has-text-right">
-            <%= link_to 'Show', school %>
             <% if current_user == school.user || current_user.has_role?(:admin) %>
-            | <%= link_to 'Edit', edit_school_path(school) %> |
+            <%= link_to 'Edit', edit_school_path(school) %> |
             <%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
             <br>
