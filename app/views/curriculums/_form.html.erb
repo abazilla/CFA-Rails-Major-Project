@@ -8,7 +8,7 @@
           <div class="columns is-vcentered">
             <div class="column is-4 is-offset-4">
               <h1 class="title">
-                Register an Account
+                Content
               </h1>
               <div class="box">
 
@@ -24,11 +24,6 @@
                       </ul>
                     </div>
                   <% end %>
-
-                <div class="label">
-                  <%= f.label :image %>
-                  <%= f.file_field :image, class: 'input'  %>
-                </div>
 
                 <div class="label">
                   <%= f.label :title %>
@@ -56,7 +51,7 @@
                 </div>
 
                 <div class="control">
-                  <%= f.submit "Create Curriculum", class: "button is-info"%>
+                  <%= f.submit "Save", class: "button is-info"%>
               </div>
               <%= link_to 'Back', curriculums_path %>
               </p>

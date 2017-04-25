@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Open Source Education</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Open Source Education</title>
+  <%= csrf_meta_tags %>
+  <script src="https://use.fontawesome.com/9097c39520.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= render 'partials/nav' %>
-    <% if flash[:error] %>
-      <div class="error"><%= flash[:error] %></div>
-    <% end %>
-    <%= yield %>
-    <%= render 'partials/footer' %>
-  </body>
+<body>
+  <%= render 'partials/nav' %>
+  <% if flash[:error] %>
+  <div class="error"><%= flash[:error] %></div>
+  <% end %>
+  <%= yield %>
+  <%= render 'partials/footer' %>
+</body>
 </html>

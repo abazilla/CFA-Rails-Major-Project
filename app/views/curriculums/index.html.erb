@@ -1,41 +1,65 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <section class="section">
+    <div class="container">
+      <div class="heading">
 
-<h1>Curriculums</h1>
-
-<%= link_to 'New Curriculum', new_curriculum_path %>
-
-<%= search_form_for @q do |f| %>
-
-  <%= f.label :title_or_content_or_subject_or_grade_cont, "Search" %>
-  <%= f.search_field :title_or_content_or_subject_or_grade_cont %>
-
-  <%= f.submit %>
-<% end %>
-
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <%= sort_link(@q, :title) %>
-      <%= sort_link(@q, :content) %>
-      <td>email</td>
-      <%= sort_link(@q, :rating) %>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @curriculums.each do |curriculum| %>
-      <tr>
-        <td><%= image_tag curriculum.image.url(:thumb) %></td>
-        <td><%= curriculum.title %></td>
-        <td><%= curriculum.content %></td>
-        <td><%= curriculum.user.email %></td>
-        <td><%= rating_for curriculum, 'rating', enable_half: true, disable_after_rate: true %></td>
-        <td><%= link_to 'Show', curriculum %></td>
-        <td><%= link_to 'Edit', edit_curriculum_path(curriculum) %></td>
-        <td><%= link_to 'Destroy', curriculum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <h1 class="title">Content</h1>
+        <h2 class="subtitle">Find or create content to help yourself and the community teach!</h2>
+        <div class="content"><h3><%= link_to 'Create Content', new_curriculum_path %></h3></div>
+        <h4 class="subtitle is-6"> Sort by:
+          <%= sort_link(@q, :title) %> |
+          <%= sort_link(@q, :grade) %> |
+          <%= sort_link(@q, :subject) %>
+        </h4>
+        <%= search_form_for @q do |f| %>
+        <div class="field has-addons">
+          <p class="control is-expanded">
+            <%= f.search_field :title_or_content_or_subject_or_grade_cont, class: "input" %>
+          </p>
+          <p class="control">
+            <a class="button is-info">
+              Search
+            </a>
+          </p>
+        </div>
+        <% end %>
+        <p id="notice"><%= notice %></p>
+      </div>
+    </div>
+  </section>
+  <div class="columns">
+    <div class="column is-offset-1 is-10">
+      <div class="box">
+        <% @curriculums.each do |curriculum| %>
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4"><%= link_to curriculum.title, curriculum %></p>
+            <p class="subtitle is-6">Author: <strong><%= curriculum.user.email %></strong>
+            <% if curriculum.user.schools != [] %>
+              <br>from <% curriculum.user.schools.each do |f|%>
+            <strong><%= link_to f.name, f %></strong>
+            <% end %>
+          </p>
+            <% end %>
+            <div class="content">
+            <p>For: <strong><%= curriculum.grade %></strong><br>
+            Subject: <strong><%= curriculum.subject %></strong><br>
+             </p>
+          </div>
+          </div>
+          <div class="media-right has-text-right">
+            <%= rating_for curriculum, 'rating', enable_half: true, disable_after_rate: true %><br><br><br><br>
+            <strong><i class="fa fa-file-o" aria-hidden="true"></i> <%= curriculum.files.count %></strong> |
+           <strong><i class="fa fa-comment-o" aria-hidden="true"></i> <%= curriculum.comments.count %></strong>
+            <% if current_user == curriculum.user || current_user.has_role?(:admin) %>
+            | <%= link_to 'Edit', edit_curriculum_path(curriculum) %> |
+            <%= link_to 'Destroy', curriculum, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
