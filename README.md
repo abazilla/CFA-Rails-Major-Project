@@ -16,7 +16,7 @@ If you would otherwise like to have it installed locally, do the following:
 
 Clone the project
 
-git clone https://github.com/nickwu78/CFA-Fund-It-Forward.git
+git clone https://github.com/abazilla/CFA-Rails-Major-Project
 
 change into the project directory, and install the dependencies:
 
