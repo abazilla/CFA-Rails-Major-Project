@@ -1,5 +1,8 @@
 ![Imgur](http://i.imgur.com/QJvxqa5.png)
 
+
+[![Code Climate](https://codeclimate.com/github/abazilla/CFA-Rails-Major-Project/badges/gpa.svg)](https://codeclimate.com/github/abazilla/CFA-Rails-Major-Project)
+
 # About
 Open Education is a platform for NSW Schools and Teachers to be able to share their curriculum, lesson planning, and resources amongst each other.
 
@@ -59,4 +62,14 @@ To message a person:
 
 1. Go to the messages link
 
-# Design
+## Design
+
+## Code Review
+
+I have reviewed my peer's code (@hyunkim95) here at https://github.com/Hyunkim95/CFA-majorproject2. See his README for my comments.
+
+He has also reviewed my code, seen here:
+
+Overall, Abazilla’s code was very clean - it was evident that Abazilla followed the methodology of a “Fat model and skinny controller” - whereby Abazilla’s functions and logics were kept out of the controllers.  Abazilla made sure to keep his code DRY, thus making his code very easy to read and prepared for any further changes. Readability of the code was kept consistent throughout the project - this was supported through his testing. From a single glance, I could tell what the code was testing and the methodology of the test.  
+
+In the future however, I would recommend Abazilla removing an unnecessary codes that are not being used; for example: within the schema it was apparent that curriculum list and user lists were not being used - this was further seen with his curriculum model which did not use its images attributes. I would also recommend testing some of the if else logics, as the update teacher method’s else statements are not being tested.

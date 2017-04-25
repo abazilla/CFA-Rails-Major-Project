@@ -1,28 +1,62 @@
-<% @users.each do |u| %>
-<div class="">
-  <%= u.email %>
-
+<div class="container">
+  <br>
+  <p class="title">Admin Dashboard</p>
+  <div class="columns">
+    <div class="column is-3">
+      <div class="columns is-multiline">
+        <div class="column is-12">
+          <p class="heading">Users</p>
+          <p class="title"><%= @users.count %></p>
+        </div>
+        <div class="column">
+          <% @users.each do |u| %>
+          <%= u.email %>
+          <br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="column is-3">
+      <div class="columns is-multiline">
+        <div class="column is-12">
+          <p class="heading">Schools</p>
+          <p class="title"><%= @schools.count %></p>
+        </div>
+        <div class="column">
+          <% @schools.each do |u| %>
+          <%= link_to u.name, u %>
+          <br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="column is-3">
+      <div class="columns is-multiline">
+        <div class="column is-12">
+          <p class="heading">Content Items</p>
+          <p class="title"><%= @curriculums.count %></p>
+        </div>
+        <div class="column">
+          <% @curriculums.each do |u| %>
+          <%= link_to u.title, u %>
+          <br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="column is-3">
+      <div class="columns is-multiline">
+        <div class="column is-12">
+          <p class="heading">Comments</p>
+          <p class="title"><%= @comments.count %></p>
+        </div>
+        <div class="column">
+          <% @comments.each do |u| %>
+          <br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<% end %>
-
-<div class="hero-foot">
-  <nav class="level">
-    <div class="level-item has-text-centered">
-      <p class="heading">Users</p>
-      <p class="title"><%= @users.count %></p>
-    </div>
-    <div class="level-item has-text-centered">
-      <p class="heading">Schools</p>
-      <p class="title"><%= @schools.count %></p>
-    </div>
-    <div class="level-item has-text-centered">
-      <p class="heading">Curriculums</p>
-      <p class="title"><%= @curriculums.count %></p>
-    </div>
-    <div class="level-item has-text-centered">
-      <p class="heading">Comments</p>
-      <p class="title"><%= @comments.count %></p>
-    </div>
-
-  </nav>
-</div>
+<br>

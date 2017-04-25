@@ -18,13 +18,11 @@ class SchoolsController < ApplicationController
       if params["object"]["included"].to_i == 0
         @school.teachers.delete(current_user)
       else
-        #TODO error cause user is already added
       end
     else
       if params["object"]["included"].to_i == 1
         @school.teachers.push(current_user)
       else
-        #TODO error cause user isn't in the list
       end
     end
 
