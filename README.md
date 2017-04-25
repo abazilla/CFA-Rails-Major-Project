@@ -64,13 +64,17 @@ To message a person:
 2. Click on the user you would like to message
 3. Send a message
 
-## Design
+## Design & Planning
 
 Since this is an educational website, I wanted it to be as clean and easy to use as possible, since the intended users may not necessarily be tech-savy, and there is no need for complexity/to be bombarded with stuff. That being said, there is the right kind of functionality for the needs of the user.
 
 ![Imgur](http://i.imgur.com/rR8Z8lH.png)
 
 As you can see, the design is simpler and not decked out with too many features. The actual website that i’ve made is a little different in the end.
+
+Below is the Entity Relationship Diagram created in the planning stage. As you can see, the forums post were omitted as it was not an MVP feature necessary for the project at the moment.
+
+![Imgur](http://i.imgur.com/hi6pKCA.png)
 
 
 ## Code Review
