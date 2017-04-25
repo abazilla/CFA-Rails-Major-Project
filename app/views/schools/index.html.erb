@@ -1,69 +1,68 @@
 <div class="container">
 
 
-<section class="section">
-  <div class="container">
-    <div class="heading">
+  <section class="section">
+      <div class="heading">
 
-      <h1 class="title">Schools</h1>
-      <h2 class="subtitle">Find or create your schools that represent you!</h2>
-      <div class="content"><h3><%= link_to 'Create a new School', new_school_path %></h3></div>
-      <%= search_form_for @q do |f| %>
-      <div class="field has-addons">
-        <p class="control">
-        <%= f.search_field :name_or_location_cont, class: "input" %>
-        </p>
-        <p class="control">
-        <a class="button is-info">
-          Search
-        </a>
-      </p>
+        <h1 class="title">Schools</h1>
+        <h2 class="subtitle">Find or create your schools that represent you!</h2>
+        <div class="content"><h3><%= link_to 'Create a new School', new_school_path %></h3></div>
+        <%= search_form_for @q do |f| %>
+        <div class="field has-addons">
+          <p class="control is-expanded">
+            <%= f.search_field :name_or_location_cont, class: "input" %>
+          </p>
+          <p class="control">
+            <a class="button is-info">
+              Search
+            </a>
+          </p>
+        </div>
+        <% end %>
+        <p id="notice"><%= notice %></p>
       </div>
-      <% end %>
-      <p id="notice"><%= notice %></p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<br>
-    <div class="columns is-multiline">
+  <div class="columns is-multiline">
     <% @schools.each do |school| %>
-      <div class="column is-one-third">
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <%= image_tag school.image.url(:medium) %>
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-              </div>
-              <div class="media-content">
-                <p class="title is-4"><%= school.name %></p>
-                <p class="subtitle is-6"><%= school.location %><br />Creator: <%= link_to school.user.email, '' %></p>
-              </div>
+    <div class="column is-one-third">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <%= image_tag school.image.url(:medium) %>
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
             </div>
+            <div class="media-content">
+              <p class="title is-4 has-text-left"><%= school.name %></p>
+              <p class="subtitle is-6"><%= school.location %><br />Creator: <%= link_to school.user.email, '' %></p>
+            </div>
+          </div>
 
-            <div class="content">
-              Current Teachers: <%= school.teachers.count %> <br>
-              Grades Taught: <%= school.grade_low %>-<%= school.grade_high %>
-              <br>
-              <%= school.description %>
-              <br>
-            </div>
-            <div class="content has-text-right">
-              <%= link_to 'Show', school %>
-              <%= link_to 'Edit', edit_school_path(school) %>
-              <%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %>
-              <br>
-              <small>Created: <%= school.created_at %></small>
-            </div>
+          <div class="content">
+            Current Teachers: <%= school.teachers.count %> <br>
+            Grades Taught: <%= school.grade_low %>-<%= school.grade_high %>
+            <br>
+            <%= school.description %>
+            <br>
           </div>
+          <div class="content has-text-right">
+            <%= link_to 'Show', school %>
+            <% if current_user == school.user || current_user.has_role?(:admin) %>
+            | <%= link_to 'Edit', edit_school_path(school) %> |
+            <%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+            <br>
+            <small>Created: <%= school.created_at %></small>
+          </div>
+        </div>
       </div>
     </div>
     <% end %>
   </div>
-<br>
+  <br>
 
 </div>

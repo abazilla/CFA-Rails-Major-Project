@@ -1,46 +1,49 @@
-<p id="notice"><%= notice %></p>
+<div class="hero is-large">
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third">
+          <div class="heading">
+            <p id="notice"><%= notice %></p>
+            <h1 class="title"><%= @school.name %></h1>
+            <h2 class="subtitle"><%= @school.location %></h2>
+            <div class="content">
+              <h3><strong>Grades taught:</strong><%= @school.grade_low %>-<%= @school.grade_high %></h3>
+              <h3><strong>User:</strong><%= @school.user.email %></h3>
+              <h3><strong>Description:</strong><%= @school.description %></h3>
+            </div>
 
-<%= image_tag @school.image.url(:medium) %>
+            <%= link_to 'Edit', edit_school_path(@school) %> |
+            <%= link_to 'Back', schools_path %>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="heading">
+            <div class="content">
+              <h3>
+                <strong>Current teachers for this school</strong>
+                <ul>
+                  <% @school.teachers.each do |teacher|%>
+                  <li><%= teacher.email %></li>
+                  <br />
+                  <% end %>
+                </ul>
+                <h4>Are you a teacher at this school?</h4>
+                  <%= form_for(@school, :url => update_teacher_school_path(@school), :method => 'post') do |f| %>
+                    Then please tick this box: <%= check_box 'object', 'included', {:checked => @school.teachers.include?(current_user)}, '1', '0' %>
+                    <br />
+                    <br />
+                    <%= f.submit "Update status", class: "button is-info" %>
+                  <% end %>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <%= image_tag @school.image.url(:large) %>
 
-
-<p>
-  <strong>Name:</strong>
-  <%= @school.name %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @school.location %>
-</p>
-
-<p>
-  <strong>Grades taught:</strong>
-  <%= @school.grade_low %>-<%= @school.grade_high %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @school.user.email %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= @school.description %>
-</p>
-
-<p>
-  <strong>Teacher list:</strong>
-  <% @school.teachers.each do |teacher|%>
-  <%= teacher.email %>,
-  <% end %>
-</p>
-
-
-<%= form_for(@school, :url => update_teacher_school_path(@school), :method => 'post') do |f| %>
-  <div class="label">
-    <%= check_box 'object', 'included', {:checked => @school.teachers.include?(current_user)}, '1', '0' %>
-    <%= f.submit "Update status" %>
-  </div>
-<% end %>
-
-<%= link_to 'Edit', edit_school_path(@school) %> |
-<%= link_to 'Back', schools_path %>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

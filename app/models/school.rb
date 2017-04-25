@@ -11,7 +11,7 @@ class School < ApplicationRecord
 
   resourcify
 
-  has_attached_file :image, styles: { large: "640x480#", medium: "400x300#", thumb: "150x150#"}, :storage => :cloudinary, :path => ':id/:style/:filename' 
+  has_attached_file :image, styles: { large: "480x360#", medium: "400x300#", thumb: "150x150#"}, :storage => :cloudinary, :path => ':id/:style/:filename' 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   # def self.add_teacher(teacher)
