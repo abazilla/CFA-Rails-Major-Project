@@ -18,12 +18,14 @@ gem 'omniauth-facebook'
 gem "pundit"
 gem "pry"
 gem "paperclip", "~> 5.0.0"
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave'
 gem 'ransack'
 gem 'ratyrate'
 gem 'friendly_id', '~> 5.1.0'
 gem "rolify"
 gem 'paperclip-cloudinary'
+gem 'fog'
+
 
 
 # Use SCSS for stylesheets

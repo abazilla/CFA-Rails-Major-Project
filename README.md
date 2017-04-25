@@ -7,7 +7,25 @@ This is a project created by myself as part of the Coder Factory Academy bootcam
 
 # Installation
 
-Please visit this site:
+Please visit this site for the live version:
+
+If you would otherwise like to have it installed locally, do the following:
+
+Clone the project:
+
+git clone https://github.com/nickwu78/CFA-Fund-It-Forward.git
+
+change into the project directory, and install the dependencies:
+
+bundle install
+
+Run the app:
+
+rails s
+
+and access it through your browser:
+
+http://localhost:3000
 
 # Usage
 
