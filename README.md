@@ -88,10 +88,11 @@ Below is the Entity Relationship Diagram created in the planning stage. As you c
 
 ![Imgur](http://i.imgur.com/hi6pKCA.png)
 
-The User Journeys can also be found here, with all the other User story/planning related content being found on my trello page:  https://trello.com/invite/b/cG2XYoKo/2445b78bdc49cb27c4fdfbd493731292/major-project-2
-
+Below are all the planning and user story/journey related content.
 
 ![Imgur](http://i.imgur.com/BeVJGIv.png)
+
+[Imgur](http://i.imgur.com/NwLhJiI.png)
 
 
 ## Code Review
