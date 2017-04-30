@@ -30,15 +30,15 @@ If you would otherwise like to have it installed locally, do the following:
 
 Clone the project
 
-git clone https://github.com/abazilla/CFA-Rails-Major-Project
+```git clone https://github.com/abazilla/CFA-Rails-Major-Project```
 
 change into the project directory, and install the dependencies:
 
-bundle install
+```bundle install```
 
 Run the app:
 
-rails s
+```rails s```
 
 and access it through your browser: http://localhost:3000
 
@@ -92,7 +92,7 @@ Below are all the planning and user story/journey related content.
 
 ![Imgur](http://i.imgur.com/BeVJGIv.png)
 
-[Imgur](http://i.imgur.com/NwLhJiI.png)
+![Imgur](http://i.imgur.com/NwLhJiI.png)
 
 
 ## Code Review
