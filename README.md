@@ -30,15 +30,21 @@ If you would otherwise like to have it installed locally, do the following:
 
 Clone the project
 
-```git clone https://github.com/abazilla/CFA-Rails-Major-Project```
+```
+git clone https://github.com/abazilla/CFA-Rails-Major-Project
+```
 
 change into the project directory, and install the dependencies:
 
-```bundle install```
+```
+bundle install
+```
 
 Run the app:
 
-```rails s```
+```
+rails s
+```
 
 and access it through your browser: http://localhost:3000
 
